@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         btnHereWeGo.setOnClickListener{
 //            annoyingExApp.hereWeGoManager.startAnnoyingTheHeckOuttaPerson()
             workManager.startAnnoyingTheHeckOuttaPerson()
+            workManager.startAnnoyingTheHeckOuttaPerson2Days()
+
         }
 
         btnBlock.setOnClickListener{

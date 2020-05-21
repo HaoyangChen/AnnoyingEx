@@ -9,6 +9,7 @@ class HereWeGoManager(private val context: Context) {
 
     companion object {
         const val ANNOYING_WORK_REQUEST_TAG = "ANNOYING_WORK_REQUEST_TAG"
+        const val FETCH_JSON_WORK_REQUEST_TAG = "FETCH_JSON_WORK_REQUEST_TAG"
     }
 
     fun startAnnoyingTheHeckOuttaPerson() {
@@ -29,6 +30,24 @@ class HereWeGoManager(private val context: Context) {
         workManager.enqueue(workRequest)
     }
 
+    fun startAnnoyingTheHeckOuttaPerson2Days() {
+        if (isAnnoyingTaskRunning()) {
+            stopWork()
+        }
+        val fetchConstraints = Constraints.Builder()
+            .setRequiresBatteryNotLow(true)
+            .setRequiredNetworkType(NetworkType.CONNECTED)
+            .build()
+
+        val extraWorkRequest = PeriodicWorkRequestBuilder<SendMessageWorker>(2, TimeUnit.DAYS)
+            .setInitialDelay(2, TimeUnit.DAYS)
+            .setConstraints(fetchConstraints)
+            .addTag(FETCH_JSON_WORK_REQUEST_TAG)
+            .build()
+
+        workManager.enqueue(extraWorkRequest)
+    }
+
     private fun isAnnoyingTaskRunning(): Boolean {
         return when (workManager.getWorkInfosByTag(ANNOYING_WORK_REQUEST_TAG).get().firstOrNull()?.state) {
             WorkInfo.State.RUNNING,
@@ -39,5 +58,6 @@ class HereWeGoManager(private val context: Context) {
 
     fun stopWork() {
         workManager.cancelAllWorkByTag(ANNOYING_WORK_REQUEST_TAG)
+        workManager.cancelAllWorkByTag(FETCH_JSON_WORK_REQUEST_TAG)
     }
 }
