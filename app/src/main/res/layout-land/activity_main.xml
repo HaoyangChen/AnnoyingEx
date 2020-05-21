@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="15dp">
+    android:padding="@dimen/appPadding">
 
     <ImageView
         android:id="@+id/exImage"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/imageWidth"
+        android:layout_height="@dimen/zero"
         android:scaleType="fitCenter"
         android:src="@drawable/ex_image"
         app:layout_constraintDimensionRatio="1:1"
@@ -17,8 +17,7 @@
         app:layout_constraintTop_toTopOf="@id/barrierTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@android:color/transparent"
-        android:foreground="?selectableItemBackground"
-        android:layout_marginTop="20dp"/>
+        android:foreground="?selectableItemBackground" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
@@ -31,9 +30,9 @@
         android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Annoying Ex"
-        android:textSize="32dp"
-        android:textColor="#000000"
+        android:text="@string/the_annoying_ex"
+        android:textSize="@dimen/titleSize"
+        android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="@id/barrier"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +48,7 @@
         android:id="@+id/btnHereWeGo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Here we go again..."
+        android:text="@string/here_we_go_again"
         app:layout_constraintLeft_toLeftOf="@id/barrier"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barrierTitle"
@@ -59,7 +58,7 @@
         android:id="@+id/btnBlock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Block"
+        android:text="@string/block"
         app:layout_constraintTop_toBottomOf="@+id/btnHereWeGo"
         app:layout_constraintLeft_toLeftOf="@id/barrier"
         app:layout_constraintRight_toRightOf="parent"
@@ -69,9 +68,9 @@
         android:id="@+id/exPrevMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:text="Ex's Previous Message:"
-        android:textSize="18sp"
+        android:layout_marginTop="@dimen/mt_5"
+        android:text="@string/ex_s_previous_message"
+        android:textSize="@dimen/medium_size"
         app:layout_constraintLeft_toLeftOf="@id/barrier"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnBlock" />
@@ -80,9 +79,9 @@
         android:id="@+id/exPrevMsgContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
+        android:layout_marginTop="@dimen/mt_5"
         android:text=""
-        android:textColor="#000000"
+        android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="@id/barrier"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exPrevMsg" />

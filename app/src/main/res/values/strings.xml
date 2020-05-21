@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AnnoyingEx</string>
+    <string name="the_annoying_ex">The Annoying Ex</string>
+    <string name="ex_s_previous_message">Ex\'s Previous Message:</string>
+    <string name="here_we_go_again">Here we go again...</string>
+    <string name="block">Block</string>
 </resources>
