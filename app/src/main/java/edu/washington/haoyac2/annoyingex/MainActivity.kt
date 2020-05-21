@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         val annoyingExApp = (application as AnnoyingExApp)
         val workManager = annoyingExApp.hereWeGoManager
 
+        exPrevMsgContent.text = intent.getStringExtra(AnnoyingNotificationManager.ANNOYING_EX_MSG)
+
         btnHereWeGo.setOnClickListener{
 //            annoyingExApp.hereWeGoManager.startAnnoyingTheHeckOuttaPerson()
             workManager.startAnnoyingTheHeckOuttaPerson()

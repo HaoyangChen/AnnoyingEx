@@ -20,6 +20,7 @@ class AnnoyingNotificationManager (
 
     companion object {
         const val NOTIFICATION_CHANNEL_ID = "NOTIFICATION_CHANNEL_ID"
+        const val ANNOYING_EX_MSG = "ANNOYING_EX_MSG"
     }
 
     init {
@@ -29,7 +30,7 @@ class AnnoyingNotificationManager (
     fun postNotification(message: String) {
         val intent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            putExtra("messageContent", message)
+            putExtra(ANNOYING_EX_MSG, message)
         }
 
         val pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
