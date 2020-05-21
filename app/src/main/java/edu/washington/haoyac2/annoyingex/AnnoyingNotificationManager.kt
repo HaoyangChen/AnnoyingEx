@@ -35,7 +35,7 @@ class AnnoyingNotificationManager (
 
         val notification = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_whatshot_black_24dp)
-            .setContentTitle("REX")
+            .setContentTitle("Scarlett Johansson")
             .setContentText(message)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setCategory(Notification.CATEGORY_MESSAGE)

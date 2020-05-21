@@ -18,13 +18,10 @@ class MainActivity : AppCompatActivity() {
         btnHereWeGo.setOnClickListener{
             workManager.startAnnoyingTheHeckOuttaPerson()
             workManager.startAnnoyingTheHeckOuttaPerson2Days()
-
         }
 
         btnBlock.setOnClickListener{
             workManager.stopWork()
         }
-
-
     }
 }
