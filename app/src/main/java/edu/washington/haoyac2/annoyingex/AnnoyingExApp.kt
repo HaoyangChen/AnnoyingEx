@@ -6,9 +6,6 @@ class AnnoyingExApp: Application() {
     lateinit var hereWeGoManager: HereWeGoManager
         private set
 
-//    lateinit var hereWeGoTwoDayManager: HereWeGoTwoDayManager
-//        private set
-
     lateinit var annoyingNotificationManager: AnnoyingNotificationManager
         private set
 
@@ -17,7 +14,6 @@ class AnnoyingExApp: Application() {
     override fun onCreate() {
         super.onCreate()
         hereWeGoManager = HereWeGoManager(this)
-//        hereWeGoTwoDayManager = HereWeGoTwoDayManager(this)
         annoyingNotificationManager = AnnoyingNotificationManager(this)
         apiManager = ApiManager(this)
     }

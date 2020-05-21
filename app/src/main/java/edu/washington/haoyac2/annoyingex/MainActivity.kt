@@ -10,22 +10,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val annoyingExApp = (applicationContext as AnnoyingExApp)
-
         val annoyingExApp = (application as AnnoyingExApp)
         val workManager = annoyingExApp.hereWeGoManager
 
         exPrevMsgContent.text = intent.getStringExtra(AnnoyingNotificationManager.ANNOYING_EX_MSG)
 
         btnHereWeGo.setOnClickListener{
-//            annoyingExApp.hereWeGoManager.startAnnoyingTheHeckOuttaPerson()
             workManager.startAnnoyingTheHeckOuttaPerson()
             workManager.startAnnoyingTheHeckOuttaPerson2Days()
 
         }
 
         btnBlock.setOnClickListener{
-//            annoyingExApp.hereWeGoManager.stopWork()
             workManager.stopWork()
         }
 

@@ -14,8 +14,6 @@ import kotlin.random.Random
 class AnnoyingNotificationManager (
         private val context: Context
     ){
-//class AnnoyingNotificationManager(private val context: Context) {
-
     private val notificationManagerCompat = NotificationManagerCompat.from(context)
 
     companion object {
@@ -49,8 +47,6 @@ class AnnoyingNotificationManager (
     }
 
     private fun createNotificationChannel() {
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Annoying Notifications"
             val descriptionText = "Messages sent from your Ex"
