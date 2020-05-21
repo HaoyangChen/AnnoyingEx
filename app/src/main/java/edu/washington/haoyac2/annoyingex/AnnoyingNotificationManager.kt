@@ -12,8 +12,9 @@ import androidx.core.app.NotificationManagerCompat
 import kotlin.random.Random
 
 class AnnoyingNotificationManager (
-    private val context: Context
-){
+        private val context: Context
+    ){
+//class AnnoyingNotificationManager(private val context: Context) {
 
     private val notificationManagerCompat = NotificationManagerCompat.from(context)
 

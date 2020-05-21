@@ -11,14 +11,14 @@ import com.google.gson.Gson
 class ApiManager(context: Context) {
     private val queue: RequestQueue = Volley.newRequestQueue(context)
 
-    fun fetchMessages(onMsgReady: (List<String>) -> Unit, onError: (() -> Unit)? = null) {
-        val msgURL = "https://raw.githubusercontent.com/echeeUW/codesnippets/master/ex_messages.json"
+    fun fetchMessages(onMessageReady: (List<String>) -> Unit, onError: (() -> Unit)? = null) {
+        val messageURL = "https://raw.githubusercontent.com/echeeUW/codesnippets/master/ex_messages.json"
         val request = StringRequest(
-            Request.Method.GET, msgURL,
+            Request.Method.GET, messageURL,
             {response ->
                 val gson = Gson()
                 val data = gson.fromJson(response, Messages::class.java)
-                onMsgReady(data.messages)
+                onMessageReady(data.messages)
             },
             {
                 onError?.invoke()
